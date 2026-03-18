@@ -23,7 +23,7 @@ export default function ResumeFeedback() {
       formData.append("resume", file);
 
       const res = await fetch(
-        "http://localhost:5000/api/resume-feedback/review",
+        "https://careerpilot-ai-1-zmdo.onrender.com/api/resume-feedback/review",
         {
           method: "POST",
           body: formData

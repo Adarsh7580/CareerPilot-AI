@@ -15,7 +15,7 @@ export default function ResumeMatch() {
     const fetchJobs = async () => {
       try {
 
-        const res = await fetch("http://localhost:5000/api/jobs");
+        const res = await fetch("https://careerpilot-ai-1-zmdo.onrender.com/api/jobs");
 
         if (!res.ok) {
           throw new Error("Failed to fetch jobs");
@@ -55,7 +55,7 @@ export default function ResumeMatch() {
       formData.append("jobId", jobId);
 
       const res = await fetch(
-        "http://localhost:5000/api/resume-match/match",
+        "https://careerpilot-ai-1-zmdo.onrender.com/api/resume-match/match",
         {
           method: "POST",
           body: formData

@@ -21,7 +21,7 @@ export default function ResumeUpload() {
       formData.append("resume", file);
 
       const res = await fetch(
-        "http://localhost:5000/api/resume/extract-skills",
+        "https://careerpilot-ai-1-zmdo.onrender.com/api/resume/extract-skills",
         {
           method: "POST",
           body: formData

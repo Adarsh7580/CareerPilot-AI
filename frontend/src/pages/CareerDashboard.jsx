@@ -16,7 +16,7 @@ export default function CareerDashboard() {
         const user = JSON.parse(localStorage.getItem("user"));
 
         // fetch jobs
-        const jobsRes = await fetch("http://localhost:5000/api/jobs");
+        const jobsRes = await fetch("https://careerpilot-ai-1-zmdo.onrender.com/api/jobs");
         const jobsData = await jobsRes.json();
 
         const jobs = jobsData.jobs || [];
@@ -28,7 +28,7 @@ export default function CareerDashboard() {
 
         // fetch progress
         const progressRes = await fetch(
-          `http://localhost:5000/api/progress/${user._id}/${job._id}`
+          `https://careerpilot-ai-1-zmdo.onrender.com/api/progress/${user._id}/${job._id}`
         );
 
         const progressData = await progressRes.json();

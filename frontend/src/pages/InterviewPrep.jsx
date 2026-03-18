@@ -15,7 +15,7 @@ export default function InterviewPrep() {
 
       try {
 
-        const res = await fetch("http://localhost:5000/api/jobs");
+        const res = await fetch("https://careerpilot-ai-1-zmdo.onrender.com/api/jobs");
 
         if (!res.ok) {
           throw new Error("Failed to fetch jobs");
@@ -48,7 +48,7 @@ export default function InterviewPrep() {
     try {
 
       const res = await fetch(
-        "http://localhost:5000/api/interview/questions",
+        "https://careerpilot-ai-1-zmdo.onrender.com/api/interview/questions",
         {
           method: "POST",
           headers: {

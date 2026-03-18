@@ -20,13 +20,13 @@ export default function Roadmap() {
     const fetchRoadmap = async () => {
       try {
         const progressRes = await fetch(
-          `http://localhost:5000/api/progress/${user._id}/${jobId}`,
+          `https://careerpilot-ai-1-zmdo.onrender.com/api/progress/${user._id}/${jobId}`,
         );
 
         const progressData = await progressRes.json();
         setCompleted(progressData.completedSkills || []);
 
-        const res = await fetch("http://localhost:5000/api/roadmap", {
+        const res = await fetch("https://careerpilot-ai-1-zmdo.onrender.com/api/roadmap", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -307,7 +307,7 @@ export default function Roadmap() {
 
                     setCompleted(updated);
 
-                    await fetch("http://localhost:5000/api/progress", {
+                    await fetch("https://careerpilot-ai-1-zmdo.onrender.com/api/progress", {
                       method: "POST",
                       headers: {
                         "Content-Type": "application/json",

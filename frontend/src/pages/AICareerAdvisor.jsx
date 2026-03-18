@@ -14,7 +14,7 @@ export default function AICareerAdvisor() {
 
       try {
 
-        const res = await fetch("http://localhost:5000/api/jobs");
+        const res = await fetch("https://careerpilot-ai-1-zmdo.onrender.com/api/jobs");
         const data = await res.json();
 
         if (Array.isArray(data)) {
@@ -52,7 +52,7 @@ export default function AICareerAdvisor() {
     try {
 
       const res = await fetch(
-        "http://localhost:5000/api/ai/ask",
+        "https://careerpilot-ai-1-zmdo.onrender.com/api/ai/ask",
         {
           method: "POST",
           headers: {
