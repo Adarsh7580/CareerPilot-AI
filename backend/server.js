@@ -1,6 +1,5 @@
 require("dotenv").config();
 
-
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -30,10 +29,9 @@ app.use("/api/roadmap", roadmapRoutes);
 app.use("/api/progress", progressRoutes);
 app.use("/api/resume-feedback", resumeFeedbackRoutes);
 
-
 // Resume features
-app.use("/api/resume", resumeRoutes);          // skill extraction
-app.use("/api/resume-match", resumeMatchRoutes); // ATS matching
+app.use("/api/resume", resumeRoutes);
+app.use("/api/resume-match", resumeMatchRoutes);
 
 // AI features
 app.use("/api/ai", aiAdvisorRoutes);
@@ -44,14 +42,16 @@ app.get("/", (req, res) => {
   res.send("CareerPilot AI Backend Running 🚀");
 });
 
-// MongoDB
+// ✅ FIXED MongoDB connection (ATLAS)
 mongoose
-  .connect("mongodb://127.0.0.1:27017/careerpilot")
-  .then(() => console.log("MongoDB connected"))
-  .catch((err) => console.log(err));
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log("✅ MongoDB Atlas connected"))
+  .catch((err) => {
+    console.error("❌ MongoDB connection error:", err);
+  });
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
 });
